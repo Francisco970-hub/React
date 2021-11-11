@@ -1,11 +1,16 @@
-import { Edit, Create, Datagrid, List, SimpleForm, TextField, TextInput } from "ra-ui-materialui";
+import { PasswordInput ,Edit, Create, Datagrid, List, SimpleForm, TextField, TextInput } from "ra-ui-materialui";
 import { Filter, SearchInput } from "react-admin";
 export const UsersList = props => (
     <List {...props}filters={<SearchBar/>}>
          <Datagrid>
-            <TextField source="id" />
             <TextField source="email" />
         </Datagrid>
+    </List>
+);
+
+export const UsersListEmail = props => (
+    <List>
+            <TextField source="email" />
     </List>
 );
 
@@ -20,7 +25,7 @@ export const UsersCreate = props => (
         <SimpleForm>
             <TextInput disabled source='id' />
             <TextInput source='email' />
-            <TextInput source='password' />
+            <PasswordInput  source='password' />
         </SimpleForm>
     </Create>
 );
