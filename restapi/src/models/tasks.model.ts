@@ -16,10 +16,10 @@ export class Tasks extends Entity {
   task: string;
 
   @property({
-    type: 'string',
+    type: 'number',
     required: true,
   })
-  user: string;
+  user: number;
 
   @property({
     type: 'date',
