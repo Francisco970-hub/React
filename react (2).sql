@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Nov-2021 às 17:31
+-- Tempo de geração: 12-Nov-2021 às 01:17
 -- Versão do servidor: 10.4.18-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -59,17 +59,19 @@ DROP TABLE IF EXISTS `tasks`;
 CREATE TABLE `tasks` (
   `id` int(11) NOT NULL,
   `task` varchar(50) NOT NULL,
-  `user` varchar(50) NOT NULL
+  `user` int(50) NOT NULL,
+  `inicio` date NOT NULL,
+  `fim` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `tasks`
 --
 
-INSERT INTO `tasks` (`id`, `task`, `user`) VALUES
-(1, 'string', '0'),
-(6, 'string', 'string'),
-(7, 'perder 95kg', 'teste@sapo.pt');
+INSERT INTO `tasks` (`id`, `task`, `user`, `inicio`, `fim`) VALUES
+(1, 'ola', 0, '2021-11-07', '2021-11-08'),
+(2, 'string', 0, '2021-11-07', '2021-11-07'),
+(3, 'ola', 13, '2021-11-12', '2021-11-13');
 
 -- --------------------------------------------------------
 
@@ -97,7 +99,8 @@ INSERT INTO `users` (`id`, `email`, `password`) VALUES
 (11, 'joao@gmail.com', '12345'),
 (12, 'ricardo@gmail.com', '123456'),
 (13, 'flavio@gmail.com', '12345678'),
-(15, 'teste@sapo.pt', 'testesapo');
+(15, 'teste@sapo.pt', 'testesapo'),
+(16, 'a037284@ismai.pt', '123456');
 
 --
 -- Índices para tabelas despejadas
@@ -135,13 +138,13 @@ ALTER TABLE `mensagens`
 -- AUTO_INCREMENT de tabela `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
