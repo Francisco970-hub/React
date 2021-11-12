@@ -21,6 +21,18 @@ export class Tasks extends Entity {
   })
   user: string;
 
+  @property({
+    type: 'date',
+    required: true,
+  })
+  inicio: string;
+
+  @property({
+    type: 'date',
+    required: true,
+  })
+  fim: string;
+
   // Define well-known properties here
 
   // Indexer property to allow additional data
