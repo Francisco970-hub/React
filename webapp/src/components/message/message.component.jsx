@@ -103,9 +103,6 @@ class Message extends Component {
   }
 
   render() {
-    
-    /*this.getId();*/
-
     return (
       <div>
         <h1 id="title">{this.state.title}</h1>

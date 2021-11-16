@@ -1,4 +1,4 @@
-import Axios from "axios";
+//import Axios from "axios";
 import {
   Edit,
   Create,
@@ -8,8 +8,8 @@ import {
   TextField,
   TextInput,
 } from "ra-ui-materialui";
-import { Filter, SearchInput,DateTimeInput ,ReferenceInput , ArrayInput,SelectArrayInput,SelectInput, SimpleFormIterator} from "react-admin";
-import {UsersListEmail} from "../new comps/users.js";
+import { Filter, SearchInput,DateTimeInput ,ReferenceInput ,SelectInput} from "react-admin";
+//import {UsersListEmail} from "../new comps/users.js";
 export const TasksList = (props) => (
   <List {...props} filters={<SearchBar />}>
     <Datagrid>
@@ -22,22 +22,11 @@ export const TasksList = (props) => (
   </List>
 );
 
-const getUsers= async (event) => {
-    await Axios.get("http://localhost:5000/getUsers").then((res) => {
-        const array = res.data.result;
-        console.log(array);
-        return array;
-      });
-}
-
 const SearchBar = (props) => (
   <Filter {...props}>
     <SearchInput placeholder="Nome" source="nome" resetable alwaysOn />
   </Filter>
 );
-
-var array = [];
-array=UsersListEmail;
 
 export const TasksCreate = (props) => (
   <Create title="Criar uma task" {...props}>

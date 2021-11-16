@@ -34,6 +34,7 @@ import { TasksCreate, TasksEdit, TasksList } from './components/new comps/tasks'
 
 import { MensagensCreate, MensagensEdit, MensagensList } from './components/new comps/mensagens'
 
+import Calendar from './components/calendar/calendar';
 
 //const dataProvider = lb4Provider('http://localhost:3000');
 
@@ -61,7 +62,8 @@ function App() {
       <Resource name="users" list={UsersList} create={UsersCreate} edit={UsersEdit} />
       <Resource name="tasks" list={TasksList} create={TasksCreate} edit={TasksEdit} />
       <Resource name="mensagens" list={MensagensList} create={MensagensCreate} edit={MensagensEdit} />
-      <Resource name="GlobalChat" list={Message} />  
+      <Resource name="Calendario" list={Calendar} />  
+      <Resource name="GlobalChat" list={Message} />
       <div>
         <Switch>
           <Route exact path='/' component={SignInOut} />

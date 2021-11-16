@@ -92,6 +92,12 @@ app.get("/getUsers", (req, res) => {
   })
 })
 
+app.get("/getTasks", (req, res) => {
+  db.query("SELECT task as title,inicio as start,fim as end FROM tasks",(err,result) => {
+    res.json({result:result});
+  })
+})
+
 app.get("/getmessages", (req, res) => {
   db.query("SELECT * FROM mensagens", (err, result) => {
     res.json({ result: result });
